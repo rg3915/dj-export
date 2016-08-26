@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'daterange_filter',
     'django_extensions',
+    'import_export',
     # my apps
     'djexport.core',
 ]
