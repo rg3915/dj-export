@@ -11,6 +11,11 @@
             <span class="glyphicon glyphicon-plus"></span> Adicionar
         </button>
     </a>
+    <a href="{% url 'core:export_data_person' %}">
+        <button id="btn_export" type="button" class="btn btn-warning">
+            <span class="glyphicon glyphicon-list"></span> Exportar
+        </button>
+    </a>
     <!-- search form -->
     <div class="form-group">
       <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">
