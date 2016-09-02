@@ -35,4 +35,6 @@ def export_data_person(request):
     file_format = XLSX()
     queryset = Person.objects.all()
     data = e.get_export_data(file_format, queryset)
-    return HttpResponse(data, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response = HttpResponse(data, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename="export.xlsx"'
+    return response
