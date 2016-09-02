@@ -7,6 +7,7 @@ from import_export.formats.base_formats import XLSX
 from .mixins import NameSearchMixin
 from .models import Person
 from .forms import PersonForm
+from django.http import HttpResponse
 
 
 def home(request):
@@ -33,4 +34,5 @@ def export_data_person(request):
     e.model = Person
     file_format = XLSX()
     queryset = Person.objects.all()
-    return e.get_export_data(file_format, queryset)
+    data = e.get_export_data(file_format, queryset)
+    return HttpResponse(data, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
