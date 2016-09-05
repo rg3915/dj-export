@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^person/(?P<pk>\d+)/edit/$', c.person_update, name='person_edit'),
     url(r'^person/(?P<pk>\d+)/delete/$', c.person_delete, name='person_delete'),
     url(r'^person/export/$', c.export_data_person, name='export_data_person'),
+    url(r'^person/export/blocked/$', c.export_data_person_blocked,
+        name='export_data_person_blocked'),
 ]

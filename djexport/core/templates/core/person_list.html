@@ -16,6 +16,11 @@
             <span class="glyphicon glyphicon-list"></span> Exportar
         </button>
     </a>
+    <a href="{% url 'core:export_data_person_blocked' %}">
+        <button id="btn_export" type="button" class="btn btn-warning">
+            <span class="glyphicon glyphicon-list"></span> Exportar bloqueados
+        </button>
+    </a>
     <!-- search form -->
     <div class="form-group">
       <input id="search_box" name="search_box" type="text" placeholder="Localizar..." class="form-control">

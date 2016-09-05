@@ -35,6 +35,19 @@ def export_data_person(request):
     file_format = XLSX()
     queryset = Person.objects.all()
     data = e.get_export_data(file_format, queryset)
-    response = HttpResponse(data, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-    response['Content-Disposition'] = 'attachment; filename="export.xlsx"'
+    response = HttpResponse(
+        data, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename="person.xlsx"'
+    return response
+
+
+def export_data_person_blocked(request):
+    e = ExportMixin()
+    e.model = Person
+    file_format = XLSX()
+    queryset = Person.objects.all().filter(blocked=True)
+    data = e.get_export_data(file_format, queryset)
+    response = HttpResponse(
+        data, content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = 'attachment; filename="person_blocked.xlsx"'
     return response
