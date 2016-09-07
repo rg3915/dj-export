@@ -1,10 +1,10 @@
 from daterange_filter.filter import DateRangeFilter
 from django.contrib import admin
-from import_export import resources, fields, widgets
+from import_export import resources
 from import_export.admin import ImportExportModelAdmin
-from .models import Person, Phone
-from .forms import PersonForm
 
+from .forms import PersonForm
+from .models import Person, Phone
 
 PERSONFIELDS = ('first_name', 'last_name', 'email', 'blocked', 'created')
 
